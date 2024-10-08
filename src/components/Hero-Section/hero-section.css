@@ -1,0 +1,82 @@
+/* Style untuk hero content */
+.hero__content h1 {
+  font-weight: 200;
+  line-height: 55px;
+}
+
+/* Mengatur ukuran gambar hero */
+.hero__img {
+  width: 100%;
+}
+
+/* Keyframes for fade-in and slide-up animation */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to the h1 tag */
+.hero__content {
+  animation: fadeSlideIn 1.5s ease-in-out;
+}
+
+/* Optional: Add staggered effect for .text__hero */
+.text__hero {
+  animation: fadeSlideIn 2s ease-in-out;
+}
+
+/* Responsive typography untuk .text__hero */
+.text__hero {
+  font-size: 5vw; /* Ukuran font menyesuaikan lebar layar */
+  font-weight: 1000;
+  color: #01a6ff;
+  line-height: 1.2;
+}
+
+/* Atur jarak padding untuk konten */
+.hero__content {
+  padding-top: 80px;
+}
+
+/* Input style untuk search box */
+.search input {
+  border: none;
+  outline: none;
+  padding: 7px 10%;
+}
+
+/* Style untuk search container */
+.search {
+  width: 60%;
+  border: 1px solid #17bf9d44;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50px;
+  margin-top: 20px;
+}
+
+/* Media query untuk layar kecil */
+@media only screen and (max-width: 768px) {
+  .text__hero {
+    font-size: 8vw; /* Ukuran teks lebih kecil pada layar sempit */
+  }
+
+  .hero__content h1 {
+    line-height: 45px;
+  }
+
+  .hero__img {
+    width: 100%
+  }
+
+  .hero__content {
+    padding-top: 40px;
+  }
+}
