@@ -1,16 +1,214 @@
-.selected {
-    border: 2px solid #28a745;
+.candidates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+.voting__div {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers everything horizontally */
+  justify-content: center; /* Centers everything vertically if needed */
+  text-align: center; /* Ensure text is centered */
+  padding: 20px;
+  margin: 0 auto; /* Center content horizontally */
+  max-width: 1200px; /* Limit the content width */
+}
+
+.section__title {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.candidate-card {
+  border: 1px solid #dddddd5b;
+  padding: 20px;
+  text-align: center;
+  border-radius: 15px;
+  background-color: #ffffff;
+  transition: box-shadow 0.3s ease;
+}
+
+.candidate-card:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.candidate-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.modal-image {
+  width: 150px;
+  height: auto;
+  margin: 20px 0;
+}
+
+.close-btn {
+  margin-top: 20px;
+}
+
+.voting-form {
+  margin-top: 20px;
+}
+
+.voting-form input {
+  padding: 12px 20px; 
+  margin-right: 15px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: 2px solid #ddd; /* Clearer border */
+  background-color: transparent; /* Light background for better contrast */
+  width: calc(100% - 160px); /* Adjust width for better responsiveness */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.voting-form input:focus {
+  border-color: #01a6ff; /* Highlight border when focused */
+  box-shadow: 0px 4px 12px rgba(1, 166, 255, 0.3); /* Subtle shadow for focus */
+  outline: none; /* Remove default outline */
+}
+
+.voting-form button {
+  border-radius: 50px;
+  border: 2px solid #01a6ff;
+  background-color: #01a6ff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.voting-form button:hover {
+  background-color: transparent;
+  color: #01a6ff;
+  box-shadow: 0px 6px 15px rgba(1, 166, 255, 0.3);
+}
+
+button.btn-vote {
+  background: #28a745;
+  color: #fff;
+  border: 2px solid #28a745;
+  margin: 10px;
+}
+
+button.btn-vote:hover {
+  background: transparent;
+  color: #28a745;
+  border: 2px solid #28a745;
+  box-shadow: 0px 12px 22px rgba(40, 167, 69, 0.5);
+}
+
+.modal-close-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.modal-close-icon:hover {
+  color: #ff416c;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  animation: slideIn 0.5s ease;
+}
+
+.modal-image {
+  width: 150px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+}
+
+.modal-close-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.modal-close-icon:hover {
+  color: #ff416c;
+}
+
+.modal-content h2, 
+.modal-content p {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
   }
-  
-  .card {
-    transition: transform 0.2s ease-in-out;
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
-  .card:hover {
-    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .candidates-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
-  
-  button:disabled {
-    background-color: #cccccc;
-    color: #666666;
-  }  
+
+  .modal-content {
+    max-width: 90%;
+  }
+
+  .voting-form input {
+    width: calc(100% - 130px);
+  }
+}
